@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8F0D443-0B42-4EDA-8370-F0B0685AB07D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PSAM</RootNamespace>
+    <AssemblyName>PSAM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GMap.NET.Core">
+      <HintPath>..\GMap\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms">
+      <HintPath>..\GMap\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministrativeOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministrativeOptions.Designer.cs">
+      <DependentUpon>AdministrativeOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrativeSettings\UserRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministrativeSettings\UserRegistration.Designer.cs">
+      <DependentUpon>UserRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AffectedAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AffectedAreas.Designer.cs">
+      <DependentUpon>AffectedAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamagesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamagesView.Designer.cs">
+      <DependentUpon>CasualtiesAndDamagesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamagesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamagesEdit.Designer.cs">
+      <DependentUpon>CasualtiesAndDamagesEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterDATASET.cs">
+      <DependentUpon>DisasterDATASET.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DisasterDATASET.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisasterDATASET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\CasualtiesAndDamages.Designer.cs">
+      <DependentUpon>CasualtiesAndDamages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterManagementCRUDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterManagementCRUDS.Designer.cs">
+      <DependentUpon>DisasterManagementCRUDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterSummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterSummaryReport.Designer.cs">
+      <DependentUpon>DisasterSummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterVictims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterManagement\DisasterVictims.Designer.cs">
+      <DependentUpon>DisasterVictims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisasterVictimsMasterlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisasterVictimsMasterlist.Designer.cs">
+      <DependentUpon>DisasterVictimsMasterlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenderDisaggregatedDataDATASET.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenderDisaggregatedDataDATASET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfileGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfileGridView.Designer.cs">
+      <DependentUpon>ProfileGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfileGridEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfileGridEdit.Designer.cs">
+      <DependentUpon>ProfileGridEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfilingDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\ProfilingDashboard.Designer.cs">
+      <DependentUpon>ProfilingDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeDisaster.Designer.cs">
+      <DependentUpon>HomeDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeProfiling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeProfiling.Designer.cs">
+      <DependentUpon>HomeProfiling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrativeSettings\LocationSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministrativeSettings\LocationSettings.Designer.cs">
+      <DependentUpon>LocationSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilingSubsystem.cs">
+      <DependentUpon>ProfilingSubsystem.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProfilingSubsystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfilingSubsystem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramDevelopment\ProgramProposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramDevelopment\ProgramProposal.Designer.cs">
+      <DependentUpon>ProgramProposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramDevelopment\ProgramManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramDevelopment\ProgramManagement.Designer.cs">
+      <DependentUpon>ProgramManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramOptions.Designer.cs">
+      <DependentUpon>ProgramOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramReports.cs">
+      <DependentUpon>ProgramReports.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgramReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramDevelopment\ProgramSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramDevelopment\ProgramSummary.Designer.cs">
+      <DependentUpon>ProgramSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GKKSurveyProfiling\SurveyProfiling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyProfiling.Designer.cs">
+      <DependentUpon>SurveyProfiling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMasterlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMasterlist.Designer.cs">
+      <DependentUpon>SurveyMasterlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMonthlyIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMonthlyIncome.Designer.cs">
+      <DependentUpon>SurveyMonthlyIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMatrixFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyMatrixFormat.Designer.cs">
+      <DependentUpon>SurveyMatrixFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyGenderDisaggregatedDataReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyGenderDisaggregatedDataReport.Designer.cs">
+      <DependentUpon>SurveyGenderDisaggregatedDataReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyStatisticalFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GKKSurveyProfiling\SurveyStatisticalFormat.Designer.cs">
+      <DependentUpon>SurveyStatisticalFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psamDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>psamDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdministrativeOptions.resx">
+      <DependentUpon>AdministrativeOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministrativeSettings\UserRegistration.resx">
+      <DependentUpon>UserRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AffectedAreas.resx">
+      <DependentUpon>AffectedAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterManagement\CasualtiesAndDamagesView.resx">
+      <DependentUpon>CasualtiesAndDamagesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterManagement\CasualtiesAndDamagesEdit.resx">
+      <DependentUpon>CasualtiesAndDamagesEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterManagement\CasualtiesAndDamages.resx">
+      <DependentUpon>CasualtiesAndDamages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterManagement\DisasterManagementCRUDS.resx">
+      <DependentUpon>DisasterManagementCRUDS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterSummary.rdlc" />
+    <EmbeddedResource Include="DisasterManagement\DisasterSummaryReport.resx">
+      <DependentUpon>DisasterSummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterManagement\DisasterVictims.resx">
+      <DependentUpon>DisasterVictims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisasterVictimsMasterlist.resx">
+      <DependentUpon>DisasterVictimsMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenderDisaggregatedDataReport.rdlc" />
+    <EmbeddedResource Include="GKKSurveyProfiling\ProfileGridEdit.resx">
+      <DependentUpon>ProfileGridEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\ProfileGridView.resx">
+      <DependentUpon>ProfileGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyProfiling.resx">
+      <DependentUpon>SurveyProfiling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\ProfilingDashboard.resx">
+      <DependentUpon>ProfilingDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeDisaster.resx">
+      <DependentUpon>HomeDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeProfiling.resx">
+      <DependentUpon>HomeProfiling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseholdAverageMonthlyIncome.rdlc" />
+    <EmbeddedResource Include="AdministrativeSettings\LocationSettings.resx">
+      <DependentUpon>LocationSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masterlist.rdlc" />
+    <EmbeddedResource Include="MasterlistVictims.rdlc" />
+    <EmbeddedResource Include="MatrixFormatFilterByHO.rdlc" />
+    <EmbeddedResource Include="MatrixFormat.rdlc" />
+    <EmbeddedResource Include="ProgramDevelopment\ProgramProposal.resx">
+      <DependentUpon>ProgramProposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramDevelopment\ProgramManagement.resx">
+      <DependentUpon>ProgramManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramOptions.resx">
+      <DependentUpon>ProgramOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramSummary.rdlc" />
+    <EmbeddedResource Include="ProgramDevelopment\ProgramSummary.resx">
+      <DependentUpon>ProgramSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyMasterlist.resx">
+      <DependentUpon>SurveyMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyMonthlyIncome.resx">
+      <DependentUpon>SurveyMonthlyIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyMatrixFormat.resx">
+      <DependentUpon>SurveyMatrixFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyGenderDisaggregatedDataReport.resx">
+      <DependentUpon>SurveyGenderDisaggregatedDataReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryOfPRogram.rdlc" />
+    <EmbeddedResource Include="SurveySocioEconomicDisasterPreparednessReport.rdlc" />
+    <EmbeddedResource Include="GKKSurveyProfiling\SurveyStatisticalFormat.resx">
+      <DependentUpon>SurveyStatisticalFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProfile.rdlc" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DisasterDATASET.xsc">
+      <DependentUpon>DisasterDATASET.xsd</DependentUpon>
+    </None>
+    <None Include="DisasterDATASET.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DisasterDATASET.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DisasterDATASET.xss">
+      <DependentUpon>DisasterDATASET.xsd</DependentUpon>
+    </None>
+    <None Include="GenderDisaggregatedDataDATASET.xsc">
+      <DependentUpon>GenderDisaggregatedDataDATASET.xsd</DependentUpon>
+    </None>
+    <None Include="GenderDisaggregatedDataDATASET.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenderDisaggregatedDataDATASET.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GenderDisaggregatedDataDATASET.xss">
+      <DependentUpon>GenderDisaggregatedDataDATASET.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="ProfilingSubsystem.xsc">
+      <DependentUpon>ProfilingSubsystem.xsd</DependentUpon>
+    </None>
+    <None Include="ProfilingSubsystem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProfilingSubsystem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ProfilingSubsystem.xss">
+      <DependentUpon>ProfilingSubsystem.xsd</DependentUpon>
+    </None>
+    <None Include="ProgramReports.xsc">
+      <DependentUpon>ProgramReports.xsd</DependentUpon>
+    </None>
+    <None Include="ProgramReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProgramReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ProgramReports.xss">
+      <DependentUpon>ProgramReports.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="psamDataSet.xsc">
+      <DependentUpon>psamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="psamDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>psamDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="psamDataSet.xss">
+      <DependentUpon>psamDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

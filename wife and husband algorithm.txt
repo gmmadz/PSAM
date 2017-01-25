@@ -1,0 +1,23 @@
+if (husband.isEmpty() && wife.isEmpty())
+{
+	wrong;
+{
+
+else if (husband.isEmpty())
+{
+	insert wife details;
+	mark '1' as the head of the household;
+}
+
+else if (wife.isEmpty())
+{
+	insert husband details;
+	mark '1' as the head of the household;
+}
+
+else
+{
+	insert husband and wife;
+	mark '1' for husband;
+	mark '2' for wife;
+}
